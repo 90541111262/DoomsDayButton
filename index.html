@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doomsday Button</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+</head>
+<body>
+    <h1>HOVER THE CURSOR BEFORE PRESS THE DOOMSDAY BUTTON!</h1>
+    <main class="container">
+        <button class="doomsday">
+            <div class="instructions">ATTENTION!!!<br> When you press the doomsday button, you will be taken out of the matrix!</div>
+        </button>
+    </main>
+    <div class="result"></div>
+
+    <script>
+        const doomsdayButton = document.querySelector('.doomsday');
+        const instructions = document.querySelector('.instructions');
+        const result = document.querySelector('.result');
+        let activationTimeout;
+
+        doomsdayButton.addEventListener('mouseenter', () => {
+            instructions.style.opacity = '1';
+        });
+
+        doomsdayButton.addEventListener('mouseleave', () => {
+            instructions.style.opacity = '0';
+        });
+
+        doomsdayButton.addEventListener('mouseup', () => {
+            clearTimeout(activationTimeout);
+        });
+    </script>
+</body>
+</html>
